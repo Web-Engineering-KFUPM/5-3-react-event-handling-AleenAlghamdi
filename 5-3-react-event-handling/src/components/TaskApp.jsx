@@ -53,11 +53,15 @@ export default function TaskApp() {
       {/*Render Task List and Enable Delete */}
       {/*Pass tasks and onDelete */}
         <TaskList tasks={tasks} onDelete={handleDelete} />
-        
+
         {/*Clear All */}
       <div className="footerRow">
-        <button className="btn btn--ghost" onClick={handleClearAll}>
-          Clear All
+          <button
+              className="btn btn--ghost"
+              onClick={handleClearAll}
+              disabled={tasks.length === 0}
+          >
+              Clear All
         </button>
       </div>
     </section>
